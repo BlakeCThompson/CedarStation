@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+    <groupId>groupId</groupId>
+    <artifactId>CedarWeatherStation</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.konghq</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>3.11.02</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.javafx.collections</groupId>
+            <artifactId>FXCollections</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.base.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.javafx.fxml</groupId>
+            <artifactId>FXML</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.fxml.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javafx.scene</groupId>
+            <artifactId>Control</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.controls.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javafx.application</groupId>
+            <artifactId>Application</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.graphics.jar</systemPath>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>WeatherStation.WeatherCaller</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
