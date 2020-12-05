@@ -17,11 +17,9 @@ import java.net.URL;
 public class WeatherCaller extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        URL url = new File("src\\main\\java\\WeatherStation\\WeatherReport.fxml").toURI().toURL();
-
         ObservableList<TimeWeather> timeWeathers = Controller.getRecentTemps();
 
-        Parent root = FXMLLoader.load(url);
+        Parent root =  FXMLLoader.load(getClass().getResource("/WeatherReport.fxml"));
 
         primaryStage.setTitle("Cedar KCDC");
         TableView<TimeWeather> fxmlTimeWeathers = (TableView<TimeWeather>)root.getChildrenUnmodifiable().get(1);

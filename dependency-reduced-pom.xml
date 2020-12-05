@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>groupId</groupId>
+  <artifactId>CedarWeatherStation</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>WeatherStation.Launcher</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <artifactSet>
+                <excludes>
+                  <exclude>classworlds:classworlds</exclude>
+                  <exclude>junit:junit</exclude>
+                  <exclude>jmock:*</exclude>
+                  <exclude>*:xml-apis</exclude>
+                  <exclude>org.apache.maven:lib:tests</exclude>
+                  <exclude>log4j:log4j:jar:</exclude>
+                </excludes>
+              </artifactSet>
+              <transformers>
+                <transformer>
+                  <mainClass>WeatherStation.Launcher</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>com.sun.javafx.collections</groupId>
+      <artifactId>FXCollections</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.base.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.javafx.fxml</groupId>
+      <artifactId>FXML</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.fxml.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>javafx.scene</groupId>
+      <artifactId>Control</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.controls.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>javafx.application</groupId>
+      <artifactId>Application</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.graphics.jar</systemPath>
+    </dependency>
+  </dependencies>
+  <properties>
+    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+  </properties>
+</project>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.*?>
+<?import WeatherStation.TimeWeather?>
+<GridPane alignment="CENTER" hgap="5.0" vgap="5.0"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="WeatherStation.Controller">
+    <padding>
+        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+    </padding>
+    <Label style="-fx-font: NORMAL 20 Tahoma;" text="KCDC past 60 minutes Weather Report"
+           GridPane.columnIndex="0" GridPane.rowIndex="0">
+    </Label>
+    <TableView fx:id="timeWeathers" GridPane.columnIndex="0"
+               GridPane.rowIndex="1" minWidth="800">
+        <columns>
+            <TableColumn fx:id="time" prefWidth="180" text="Time">
+                <cellValueFactory>
+                    <PropertyValueFactory property="date"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100" text="temp (Fah)">
+                <cellValueFactory>
+                    <PropertyValueFactory property="temp"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100" text="Dew Point">
+                <cellValueFactory>
+                    <PropertyValueFactory property="dewPoint"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100" text="Humidity (%)">
+                <cellValueFactory><PropertyValueFactory property="relHumidity" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100" text="Wind Chill">
+                <cellValueFactory><PropertyValueFactory property="windChill" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn  text="Wind Direction">
+                <cellValueFactory><PropertyValueFactory property="windDirection" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100" text="Wind Speed">
+                <cellValueFactory><PropertyValueFactory property="windSpeed" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100" text="Visibility(Miles)">
+                <cellValueFactory><PropertyValueFactory property="milesVisibility" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100" text="Clouds">
+                <cellValueFactory><PropertyValueFactory property="clouds" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <TimeWeather date="2020-12-04T10:00:00" temp="10" dewPoint="5" relHumidity="20" windDirection="North"
+                             windSpeed="6"
+                             milesVisibility="10"
+                             clouds="CLEAR"
+                             stationPressure="4"
+                             seaLevelPressure="4"
+                             altimeterSetting="12"/>
+            </FXCollections>
+        </items>
+        <sortOrder>
+            <fx:reference sortType="ASCENDING" source="time"/>
+        </sortOrder>
+    </TableView>
+</GridPane>

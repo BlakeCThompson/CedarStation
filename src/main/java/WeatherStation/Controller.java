@@ -80,6 +80,7 @@ public class Controller {
                 try {
                     aTimeWeather.setWindChill(windChill.getInt(i));
                 } catch (Exception ignore) {
+                    System.out.println("Wind Chill error for time: "+dateTimes.get(i).toString());
                 }
                 try {
                     aTimeWeather.setWindDirection(windDirection.getString(i));

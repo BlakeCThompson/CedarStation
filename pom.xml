@@ -24,6 +24,11 @@
             <systemPath>C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.base.jar</systemPath>
         </dependency>
         <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>11</version>
+        </dependency>
+        <dependency>
             <groupId>com.sun.javafx.fxml</groupId>
             <artifactId>FXML</artifactId>
             <version>1.0</version>
@@ -55,13 +60,41 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>WeatherStation.WeatherCaller</mainClass>
+                            <mainClass>WeatherStation.Launcher</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.2.4</version>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                        <artifactSet>
+                            <excludes>
+                                <exclude>classworlds:classworlds</exclude>
+                                <exclude>junit:junit</exclude>
+                                <exclude>jmock:*</exclude>
+                                <exclude>*:xml-apis</exclude>
+                                <exclude>org.apache.maven:lib:tests</exclude>
+                                <exclude>log4j:log4j:jar:</exclude>
+                            </excludes>
+                        </artifactSet>
+                        <transformers>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <mainClass>WeatherStation.Launcher</mainClass>
+                            </transformer>
+                        </transformers>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
         </plugins>
     </build>
 

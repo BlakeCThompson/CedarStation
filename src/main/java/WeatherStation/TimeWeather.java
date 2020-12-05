@@ -120,9 +120,6 @@ public class TimeWeather {
 
     public void setWindSpeed(int windSpeed) {
         this.windSpeed.set(windSpeed);
-        if(this.temp.get()!=0){
-            setWindChill(temp.get(),this.windSpeed.get());
-        }
     }
 
     public void setMilesVisibility(int milesVisibility) {
@@ -150,10 +147,10 @@ public class TimeWeather {
     public void setAltimeterSetting(double altimeterSetting) {
         this.altimeterSetting.set(altimeterSetting);
     }
-    public void setWindChill(int temp, int windSpeed)
+  /*  public void setWindChill(int temp, int windSpeed)
     {
         this.windChill.set(35.74 + (0.6215*temp) - (35.75*Math.pow(windSpeed,0.16)));
-    }
+    }*/
 
     public TimeWeather(){
 
@@ -179,7 +176,6 @@ public class TimeWeather {
         setTemp(temp);
         setDewPoint(dewPoint);
         setRelHumidity(relHumidity);
-        setWindChill(temp,windSpeed);
         setWindDirection(windDirection);
         setWindSpeed(windSpeed);
         setMilesVisibility(milesVisibility);
@@ -193,7 +189,6 @@ public class TimeWeather {
         setTemp(temp);
         setDewPoint(dewPoint);
         setRelHumidity(relHumidity);
-        setWindChill(temp,windSpeed);
         setWindDirection(windDirection);
         setWindSpeed(windSpeed);
         setMilesVisibility(milesVisibility);
