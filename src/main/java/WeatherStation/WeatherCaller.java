@@ -33,6 +33,10 @@ public class WeatherCaller extends Application {
         primaryStage.show();
     }
 
+    private static void setReadings(){
+
+    }
+
 
     public static void main(String[] args) {
         launch(args);

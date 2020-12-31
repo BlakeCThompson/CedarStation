@@ -5,8 +5,12 @@
 -fx-pref-height:150;
 -fx-font-size: 24;
 -fx-background-color:white;
+-fx-collapsible:false;
+-fx-animated:false;
+
 }
 TitledPane{
+
 -fx-background-color:white;
 -fx-body-color:white;
 -fx-content-color:white;

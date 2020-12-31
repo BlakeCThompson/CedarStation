@@ -45,7 +45,7 @@
         </ToolBar>
     </top>
 <center>
-<GridPane hgap="5.0" prefWidth="3892.0" style="-fx-background-color: white;" vgap="5.0" BorderPane.alignment="CENTER">
+<GridPane hgap="5.0" style="-fx-background-color: white;" vgap="5.0" BorderPane.alignment="CENTER">
 
     <padding>
         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
@@ -54,7 +54,7 @@
             <children>
                <ImageView fitHeight="224.0" fitWidth="357.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@tbird.jpg" />
+                     <Image url="@t-bird.jpg" />
                   </image>
                </ImageView>
                <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="491.0" prefWidth="1146.0" spacing="15.0" HBox.hgrow="ALWAYS">
@@ -75,21 +75,30 @@
                            </Pane>
                         </children>
                      </HBox>
-                <HBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                <HBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0" VBox.vgrow="ALWAYS">
                         <children>
-                           <TitledPane fx:id="tempBox" alignment="CENTER" animated="false" collapsible="false" styleClass="dashBox" text="Temperature (Celsius)">
+                           <TitledPane fx:id="tempBox" alignment="CENTER" styleClass="dashBox" text="Temperature (Celsius)">
                              <content>
-                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                               <AnchorPane>
+                                    <children>
+                                       <Label prefHeight="75.0" prefWidth="326.0" style="-fx-background-color: white; -fx-color: white;" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children></AnchorPane>
                              </content>
                            </TitledPane>
-                           <TitledPane fx:id="dewPointBox" alignment="CENTER" animated="false" collapsible="false" styleClass="dashBox" text="Dew Point">
+                           <TitledPane fx:id="dewPointBox" alignment="CENTER" styleClass="dashBox" text="Dew Point">
                              <content>
-                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                       <Label prefHeight="55.0" prefWidth="326.0" style="-fx-background-color: white; -fx-color: white;" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children></AnchorPane>
                              </content>
                            </TitledPane>
-                           <TitledPane fx:id="WindSpdBox" alignment="CENTER" animated="false" collapsible="false" styleClass="dashBox" text="Wind Speed (Knots)">
+                           <TitledPane fx:id="WindSpdBox" alignment="CENTER" styleClass="dashBox" text="Wind Speed (Knots)">
                              <content>
-                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                       <Label layoutX="-10.0" layoutY="29.0" style="-fx-background-color: white; -fx-color: white;" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children></AnchorPane>
                              </content>
                            </TitledPane>
                         </children>
@@ -97,21 +106,30 @@
                            <Insets left="75.0" />
                         </padding>
                      </HBox>
-                     <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0" VBox.vgrow="ALWAYS">
                         <children>
-                           <TitledPane fx:id="cloudsBox" animated="false" collapsible="false" contentDisplay="CENTER" styleClass="dashBox" text="Clouds">
+                           <TitledPane fx:id="cloudsBox" contentDisplay="CENTER" styleClass="dashBox" text="Clouds">
                              <content>
-                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                       <Label prefHeight="55.0" prefWidth="326.0" style="-fx-background-color: white; -fx-color: white;" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children></AnchorPane>
                              </content>
                            </TitledPane>
-                           <TitledPane fx:id="visibilityBox" alignment="CENTER" animated="false" collapsible="false" styleClass="dashBox" text="Visibility">
+                           <TitledPane fx:id="visibilityBox" alignment="CENTER" styleClass="dashBox" text="Visibility">
                              <content>
-                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                       <Label prefHeight="55.0" prefWidth="326.0" style="-fx-background-color: white; -fx-color: white;" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children></AnchorPane>
                              </content>
                            </TitledPane>
-                           <TitledPane fx:id="windDirBox" alignment="CENTER" animated="false" collapsible="false" styleClass="dashBox" text="Wind Direction">
+                           <TitledPane fx:id="windDirBox" alignment="CENTER" styleClass="dashBox" text="Wind Direction">
                              <content>
-                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                       <Label prefHeight="45.0" prefWidth="326.0" style="-fx-background-color: white; -fx-color: white;" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children></AnchorPane>
                              </content>
                            </TitledPane>
                         </children>
@@ -122,16 +140,22 @@
                            <Insets left="75.0" />
                         </padding>
                      </HBox>
-                     <HBox spacing="40.0">
+                     <HBox spacing="40.0" VBox.vgrow="ALWAYS">
                         <children>
-                           <TitledPane fx:id="altimeterSettingsBox" alignment="CENTER" animated="false" collapsible="false" styleClass="dashBox" text="Altimeter Settings">
+                           <TitledPane fx:id="altimeterSettingsBox" alignment="CENTER" styleClass="dashBox" text="Altimeter Settings">
                              <content>
-                               <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="200.0" />
+                               <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                       <Label prefHeight="94.0" prefWidth="344.0" style="-fx-background-color: white; -fx-color: white;" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children></AnchorPane>
                              </content>
                            </TitledPane>
-                           <TitledPane fx:id="densityAltitudeBox" alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" styleClass="dashBox" text="Density Altitude">
+                           <TitledPane fx:id="densityAltitudeBox" alignment="CENTER" contentDisplay="CENTER" styleClass="dashBox" text="Density Altitude">
                              <content>
-                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="200.0" />
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="200.0">
+                                    <children>
+                                       <Label prefHeight="94.0" prefWidth="344.0" style="-fx-background-color: white; -fx-color: white;" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children></AnchorPane>
                              </content>
                            </TitledPane>
                         </children>
@@ -153,7 +177,7 @@
             </children>
          </HBox>
 
-    <TableView fx:id="timeWeathers" minWidth="1400" visible="false" GridPane.columnIndex="0" GridPane.rowIndex="2">
+    <TableView fx:id="timeWeathers" minWidth="1400" visible="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
         <columns>
             <TableColumn fx:id="time" prefWidth="180" text="Time">
                 <cellValueFactory>
