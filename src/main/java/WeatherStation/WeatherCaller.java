@@ -27,9 +27,9 @@ public class WeatherCaller extends Application {
 
         //fxmlTimeWeathers.getSortOrder().add(fxmlTimeWeathers.getColumns().get(0));
 
-        primaryStage.setScene(new Scene(root, 1400, 800));
+        primaryStage.setScene(new Scene(root, 1400, 840));
         primaryStage.setMinWidth(1150);
-        primaryStage.setMinHeight(525);
+        primaryStage.setMinHeight(565);
         primaryStage.show();
     }
 
