@@ -56,6 +56,7 @@ public class TimeWeather {
     }
 
     public double getWindChill() {
+
         return windChill.get();
     }
 
@@ -80,10 +81,10 @@ public class TimeWeather {
     }
 
     public double getSeaLevelPressure() {
-        if(seaLevelPressure.isBound()) {
+        try{
             return seaLevelPressure.get();
-        }
-        else return 0;
+        }catch(NullPointerException nullPointerException){}
+        return 0;
     }
 
     public double getAltimeterSetting() {

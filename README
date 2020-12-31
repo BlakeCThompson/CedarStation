@@ -1,0 +1,12 @@
+#Cedar Weather Station App
+This application is powered by synoptic data weather API
+https://api.synopticdata.com.
+At least one API code from Synoptic data is needed to run this app. A free account can be
+registered at https://synopticdata.com.
+IMPORTANT NOTICE: Synopticdata's API is only free up to the first 5000 
+requests/month. Details at https://synopticdata.com/pricing/
+
+##Running on Windows
+To run on a Windows machine, Java (version 11 or greater) must be installed. Then, the app can be started simply by double clicking the included CedarWeatherStation.bat file.
+
+
