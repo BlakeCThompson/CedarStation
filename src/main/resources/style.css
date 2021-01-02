@@ -4,11 +4,17 @@
 -fx-min-height:150;
 -fx-pref-width:350;
 -fx-pref-height:150;
--fx-font-size: 24;
+-fx-font-size: 36;
 -fx-background-color:white;
 -fx-collapsible:false;
 -fx-animated:false;
 
+}
+.split-pane-divider{
+-fx-border-color:gold;
+-fx-border-width:1.5;
+-fx-border-style: solid;
+   -fx-padding: 0 0 0 0;
 }
 TitledPane{
 

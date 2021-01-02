@@ -27,20 +27,23 @@ public class TimeWeather {
         try{setDate(date);
         setTemp(temp);
         setDewPoint(dewPoint);
-        setRelHumidity(relHumidity);}catch(Exception e){}
-        try{setWindChill(windChill);}catch (Exception e){}
+        setRelHumidity(relHumidity);}catch(Exception ignored){}
+        try{setWindChill(windChill);}catch (Exception ignored){}
         setWindDirection(windDirection);
         setWindSpeed(windSpeed);
         setMilesVisibility(milesVisibility);
         setClouds(clouds);
         setStationPressure(stationPressure);
-        try{setSeaLevelPressure(seaLevelPressure);}catch(Exception e){}
+        try{setSeaLevelPressure(seaLevelPressure);}catch(Exception ignored){}
         setAltimeterSetting(altimeterSetting);
     }
 
 
     public String getDate() {
         return date.get().toString();
+    }
+    public Date getDateObj() {
+        return date.get();
     }
 
     public int getTemp() {
@@ -83,7 +86,7 @@ public class TimeWeather {
     public double getSeaLevelPressure() {
         try{
             return seaLevelPressure.get();
-        }catch(NullPointerException nullPointerException){}
+        }catch(NullPointerException ignored){}
         return 0;
     }
 
@@ -142,7 +145,7 @@ public class TimeWeather {
         this.seaLevelPressure.set(seaLevelPressure);
     }
     public void setSeaLevelPressure(Optional<Double> seaLevelPressure) {
-        this.seaLevelPressure.set(seaLevelPressure.get());
+        seaLevelPressure.ifPresent(aDouble -> this.seaLevelPressure.set(aDouble));
     }
 
     public void setAltimeterSetting(double altimeterSetting) {
