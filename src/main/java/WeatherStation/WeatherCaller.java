@@ -16,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class WeatherCaller extends Application {
         HBox hBox = (HBox) gridPane.getChildren().get(0);
         VBox readingsHolder = (VBox) hBox.getChildren().get(1);
             Scheduler scheduler = new Scheduler();
-            scheduler.schedule("0/6 6-23 * * 1-5", () -> {
+            scheduler.schedule("*/6 6-23 * * 1-5", () -> {
                 System.out.println("scheduler is working.");
                 //wrapping in platform.runlater makes it work on javafx thread.
                 Platform.runLater(() -> setReadings(readingsHolder));
@@ -88,16 +89,14 @@ public class WeatherCaller extends Application {
         setReadings(readingsHolder);
     }
     private static void setReadings(VBox readingsHolder){
-        //Confusing, but to make calculation work, have to change to UTC time zone.
-        LocalDateTime sixMinAgo = LocalDateTime.now().minusMinutes(6);
-        sixMinAgo = sixMinAgo.plusHours(7);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        OffsetDateTime offsetDateTime = OffsetDateTime.now(ZoneOffset.UTC).minusMinutes(6);
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         Instant currentDate = timeWeather.getDateObj().toInstant();
         //System.out.println("you're refreshing data");
         //if it has been more than 6 minutes ago, try to get a newer reading.
-        if(currentDate.isBefore(sixMinAgo.toInstant(ZoneOffset.UTC))){
+        if(currentDate.isBefore(offsetDateTime.toInstant())){
             Controller.getRecentTemps(timeWeather);
-            System.out.println("Fresh data was collected. D:");
+            System.out.println("Fresh data was collected at: "+ LocalDateTime.now().toString());
         }
         Label labl = (Label)readingsHolder.lookup("#currentTimeLabel");
         labl.textProperty().bind(timeWeather.getDate());

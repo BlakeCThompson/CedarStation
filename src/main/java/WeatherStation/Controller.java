@@ -100,8 +100,20 @@ public class Controller {
                 } catch (Exception ignore) {
                 }
                 try {
-                    timeWeather.setDewPoint((int) Math.round(dewPoint.getDouble(i)));
-                } catch (Exception ignore) {
+                    timeWeather.setDewPoint((int)Math.round(dewPoint.getDouble(i)));
+                } catch (Exception noDewPoint) {
+                    boolean errored = true;
+                    int incrementor = i;
+                    while (errored && incrementor > 0) {
+                        try {
+                            timeWeather.setDewPoint((int)Math.round(dewPoint.getDouble(incrementor)));
+                            errored=false;
+                        } catch (Exception ignore) {
+                            incrementor--;
+                            System.out.println("Dew Point error for time:" + dateTimes.get(i).toString());
+                        }
+
+                    }
                 }
                 try {
                     timeWeather.setRelHumidity(relHumidity.getDouble(i));
@@ -246,8 +258,9 @@ public class Controller {
             } catch (Exception ignore) {
             }
             try {
+                givenTWeather.setClouds(cloudCover.getJSONObject(i).get("height_agl").toString());
+            } catch (Exception noClouds) {
                 givenTWeather.setClouds(cloudCover.getJSONObject(i).get("sky_condition").toString());
-            } catch (Exception ignore) {
             }
             try {
                 givenTWeather.setStationPressure(pressure.getDouble(i));
