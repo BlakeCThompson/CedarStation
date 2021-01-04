@@ -17,21 +17,19 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<?import javafx.scene.layout.Pane?>
-
-      <BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WeatherStation.Controller" minHeight="500.0" minWidth="1000">
+<BorderPane minHeight="500.0" minWidth="1000" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WeatherStation.Controller">
           <top>
       
               <ToolBar minHeight="-Infinity" BorderPane.alignment="TOP_CENTER">
-                  <Button id="APICode">
+                  <Button id="APICode" onMouseClicked="#getTokenDialog">
                 API Token
             </Button>
+         <Button mnemonicParsing="false" onMouseClicked="#testIncrementModel" text="Button" />
                   <Pane prefWidth="100" HBox.hgrow="SOMETIMES" />
                   <Label alignment="TOP_CENTER" minHeight="-Infinity" text="Cedar Airport Most Current Weather Report" BorderPane.alignment="TOP_CENTER">
                       <font>
@@ -42,7 +40,7 @@
                   <CheckBox id="autoRefresh" selected="true">
                 Auto-Refresh
             </CheckBox>
-                  <Button id="manualRefresh">
+                  <Button id="manualRefresh" onMouseClicked="#refreshData">
                 Refresh
             </Button>
               </ToolBar>
@@ -66,7 +64,7 @@
                               <children>
                                  <Pane minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT">
                                     <children>
-                                       <Label id="currentTimeLabel" alignment="TOP_LEFT" prefHeight="43.0" prefWidth="1013.0" text="Current Time:">
+                                       <Label id="currentTimeLabel" alignment="TOP_LEFT" prefHeight="43.0" prefWidth="1013.0" text="Invalid Token">
                                           <font>
                                              <Font name="Yu Gothic Medium" size="43.0" />
                                           </font>
@@ -89,7 +87,7 @@
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             <Label id="temperatureLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                     </items>
@@ -103,7 +101,7 @@
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             <Label id="dewPointLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                     </items>
@@ -117,7 +115,7 @@
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             <Label id="windSpeedLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                     </items>
@@ -138,7 +136,7 @@
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             <Label id="windDirectionLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                     </items>
@@ -152,7 +150,7 @@
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             <Label id="visibilityLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                     </items>
@@ -166,7 +164,7 @@
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             <Label id="cloudsLabel" prefHeight="82.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="N/A" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                     </items>
@@ -312,5 +310,3 @@
               <URL value="@style.css" />
           </stylesheets>
       </BorderPane>
-
-

@@ -1,6 +1,7 @@
 package WeatherStation;
 
 import javafx.beans.property.*;
+import javafx.beans.value.ObservableValue;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,18 +9,18 @@ import java.util.Date;
 import java.util.Optional;
 
 public class TimeWeather {
-    private ObjectProperty<Date> date = new SimpleObjectProperty<>(this,"date");
-    private SimpleIntegerProperty temp = new SimpleIntegerProperty(0);
-    private  SimpleIntegerProperty  dewPoint = new SimpleIntegerProperty(0);
-    private  SimpleDoubleProperty  relHumidity = new SimpleDoubleProperty(0);
-    private  SimpleDoubleProperty  windChill = new SimpleDoubleProperty(0);
-    private SimpleStringProperty windDirection = new SimpleStringProperty("");
-    private SimpleIntegerProperty windSpeed = new SimpleIntegerProperty(0);
-    private SimpleIntegerProperty milesVisibility = new SimpleIntegerProperty(0);
-    private SimpleStringProperty clouds = new SimpleStringProperty("");
-    private SimpleDoubleProperty stationPressure= new SimpleDoubleProperty(0);
-    private SimpleDoubleProperty seaLevelPressure= new SimpleDoubleProperty(0);
-    private SimpleDoubleProperty altimeterSetting = new SimpleDoubleProperty(0);
+    private StringProperty date = new SimpleStringProperty();
+    private StringProperty temp = new SimpleStringProperty();
+    private  StringProperty  dewPoint = new SimpleStringProperty();
+    private  StringProperty  relHumidity = new SimpleStringProperty();
+    private  StringProperty  windChill = new SimpleStringProperty();
+    private StringProperty windDirection = new SimpleStringProperty();
+    private StringProperty windSpeed = new SimpleStringProperty();
+    private StringProperty milesVisibility = new SimpleStringProperty();
+    private StringProperty clouds = new SimpleStringProperty();
+    private StringProperty stationPressure = new SimpleStringProperty();
+    private StringProperty seaLevelPressure = new SimpleStringProperty();
+    private StringProperty altimeterSetting = new SimpleStringProperty();
 
     public TimeWeather(String date, int temp, int dewPoint, double relHumidity,
                        double windChill, String windDirection, int windSpeed, int milesVisibility,
@@ -39,83 +40,80 @@ public class TimeWeather {
     }
 
 
-    public String getDate() {
-        return date.get().toString();
+    public StringProperty getDate() {
+        return date;
     }
     public Date getDateObj() {
-        return date.get();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        try{
+            return(sdf.parse(date.getValue()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
-    public int getTemp() {
-        return temp.get();
+    public StringProperty getTemp() {
+        return temp;
     }
 
-    public int getDewPoint() {
-        return dewPoint.get();
+    public StringProperty getDewPoint() {
+        return dewPoint;
     }
 
     public double getRelHumidity() {
-        return(double) Math.round(relHumidity.get());
+        return(double) Math.round(Double.valueOf(String.valueOf(relHumidity)));
     }
 
-    public double getWindChill() {
+    public StringProperty getWindChill() {return windChill;}
 
-        return windChill.get();
+    public StringProperty getWindDirection() {
+        return windDirection;
     }
 
-    public String getWindDirection() {
-        return windDirection.get();
+    public StringProperty getWindSpeed() {
+        return windSpeed;
     }
 
-    public int getWindSpeed() {
-        return windSpeed.get();
+    public StringProperty getMilesVisibility() {
+        return milesVisibility;
     }
 
-    public int getMilesVisibility() {
-        return milesVisibility.get();
+    public StringProperty getClouds() {
+        return clouds;
     }
 
-    public String getClouds() {
-        return clouds.get();
+    public StringProperty getStationPressure() {
+        return stationPressure;
     }
 
-    public double getStationPressure() {
-        return stationPressure.get();
-    }
-
-    public double getSeaLevelPressure() {
+    public Object getSeaLevelPressure() {
         try{
-            return seaLevelPressure.get();
+            return seaLevelPressure;
         }catch(NullPointerException ignored){}
         return 0;
     }
 
-    public double getAltimeterSetting() {
-        return altimeterSetting.get();
-    }
+    public StringProperty getAltimeterSetting() {return altimeterSetting;}
     public void setDate(Date date) {
-        this.date.setValue(date);
+        this.date.setValue(date.toString());
     }
     public void setDate(String date) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        try{
-            this.date.setValue(sdf.parse(date));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        this.date.setValue(date);
     }
 
     public void setTemp(int temp) {
-        this.temp.set(temp);
+        this.temp.setValue(String.valueOf(temp));
     }
 
     public void setDewPoint(int dewPoint) {
-        this.dewPoint.set(dewPoint);
+        this.dewPoint.set(String.valueOf(dewPoint));
     }
 
 
     public void setWindChill(double windChill) {
-        this.windChill.set(windChill);
+        this.windChill.set(String.valueOf(windChill));
     }
 
     public void setWindDirection(String windDirection) {
@@ -123,34 +121,32 @@ public class TimeWeather {
     }
 
     public void setWindSpeed(int windSpeed) {
-        this.windSpeed.set(windSpeed);
+        this.windSpeed.set(String.valueOf(windSpeed));
     }
 
     public void setMilesVisibility(int milesVisibility) {
-        this.milesVisibility.set(milesVisibility);
+        this.milesVisibility.set(String.valueOf(milesVisibility));
     }
 
     public void setClouds(String clouds) {
         this.clouds.set(clouds);
     }
     public void setRelHumidity(double relHumidity) {
-        this.relHumidity.set(relHumidity);
+        this.relHumidity.set(String.valueOf(relHumidity));
     }
 
     public void setStationPressure(double stationPressure) {
-        this.stationPressure.set(stationPressure);
+        this.stationPressure.set(String.valueOf(stationPressure));
     }
 
     public void setSeaLevelPressure(double seaLevelPressure){
-        this.seaLevelPressure.set(seaLevelPressure);
+        this.seaLevelPressure.set(String.valueOf(seaLevelPressure));
     }
     public void setSeaLevelPressure(Optional<Double> seaLevelPressure) {
-        seaLevelPressure.ifPresent(aDouble -> this.seaLevelPressure.set(aDouble));
+        seaLevelPressure.ifPresent(aDouble -> this.seaLevelPressure.set(String.valueOf(aDouble)));
     }
 
-    public void setAltimeterSetting(double altimeterSetting) {
-        this.altimeterSetting.set(altimeterSetting);
-    }
+    public void setAltimeterSetting(double altimeterSetting) {this.altimeterSetting.set(String.valueOf(altimeterSetting));}
   /*  public void setWindChill(int temp, int windSpeed)
     {
         this.windChill.set(35.74 + (0.6215*temp) - (35.75*Math.pow(windSpeed,0.16)));
@@ -176,19 +172,6 @@ public class TimeWeather {
                        double stationPressure,
                        double seaLevelPressure,
                        double altimeterSetting) {
-        setDate(date);
-        setTemp(temp);
-        setDewPoint(dewPoint);
-        setRelHumidity(relHumidity);
-        setWindDirection(windDirection);
-        setWindSpeed(windSpeed);
-        setMilesVisibility(milesVisibility);
-        setClouds(clouds);
-        setStationPressure(stationPressure);
-        setSeaLevelPressure(seaLevelPressure);
-        setAltimeterSetting(altimeterSetting);
-    }
-    public TimeWeather(Date date, int temp, int dewPoint, double relHumidity, String windDirection, int windSpeed, int milesVisibility, String clouds, double stationPressure, Optional<Double> seaLevelPressure, double altimeterSetting) {
         setDate(date);
         setTemp(temp);
         setDewPoint(dewPoint);

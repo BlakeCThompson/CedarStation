@@ -47,6 +47,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: it.sauronsoftware.cron4j:cron4j:2.2.5" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: javafx.scene:Control:1.0">
         <CLASSES>

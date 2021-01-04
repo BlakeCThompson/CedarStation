@@ -1,0 +1,16 @@
+35 knotts
+clouds 3000 ft
+visibility 1 mile
+density altitude must be less than 8000
+(29.92 - altimeter setting) *1000 = Pressure Altitude Correction
+Density Altitude correction = (current temperature - std temp( 4deg celsius))*120 
+
+End result for Density Altitude = take current elevation (5600) + Pressure Altitude + Density Altitude. 
+
+
+business hours
+5am to midnight
+
+
+every 6 minutes
+from 6AM to 11 PM
