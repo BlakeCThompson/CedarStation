@@ -1,1 +1,1 @@
-java -jar target\CedarWeatherStation-1.0-SNAPSHOT.jar
+javaw -jar target\CedarWeatherStation-1.0-SNAPSHOT.jar

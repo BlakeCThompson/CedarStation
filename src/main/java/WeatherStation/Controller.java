@@ -38,9 +38,9 @@ public class Controller {
         }
         try {
             if (token.equals("")) {
-                return null;
+                throw new NullPointerException("no token");
             }
-        }catch(NullPointerException nullPointerException){return null;}
+        }catch(NullPointerException nullPointerException){throw nullPointerException;}
 
             encodedMSG = URLEncoder.encode(",speed|kts,temp|C", StandardCharsets.UTF_8);
             String host = "https://api.synopticdata.com/v2/stations/timeseries";
@@ -312,8 +312,4 @@ public class Controller {
         System.out.println("Refreshed");
     }
 
-    public void testIncrementModel(MouseEvent mouseEvent) {
-        //WeatherCaller.timeWeather.setTemp(Integer.parseInt(WeatherCaller.timeWeather.getTemp().getValue()+1));
-        System.out.println("yes you clicked the button.");
-    }
 }
