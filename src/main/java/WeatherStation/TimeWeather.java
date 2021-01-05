@@ -23,6 +23,10 @@ public class TimeWeather {
     private StringProperty altimeterSetting = new SimpleStringProperty();
     private StringProperty densityAltitude = new SimpleStringProperty();
 
+    public StringProperty getDensityAltitude() {
+        return densityAltitude;
+    }
+
     public TimeWeather(String date, int temp, int dewPoint, double relHumidity,
                        double windChill, String windDirection, int windSpeed, int milesVisibility,
                        String clouds, double stationPressure, double seaLevelPressure, double altimeterSetting) {
@@ -106,9 +110,15 @@ public class TimeWeather {
 
     public void setTemp(int temp) {
         this.temp.setValue(String.valueOf(temp));
+        try {
+            setDensityAltitude();
+        }catch(Exception ohWell){}
     }
     public void setTemp(String temp) {
         this.temp.setValue(temp);
+        try {
+            setDensityAltitude();
+        }catch(Exception ohWell){}
     }
 
     public void setDewPoint(int dewPoint) {
@@ -129,7 +139,13 @@ public class TimeWeather {
     public void setWindDirection(String windDirection) {
         this.windDirection.set(windDirection);
     }
-
+    private void setDensityAltitude()
+    {
+        int temp = Integer.parseInt(this.temp.get());
+        double altSetting = Double.parseDouble(this.altimeterSetting.get());
+        double densAlt = (((29.92-altSetting)*1000)+5600)+(temp-4)*120;
+        this.densityAltitude.set(String.valueOf(densAlt));
+    }
     public void setWindSpeed(int windSpeed) {
         this.windSpeed.set(String.valueOf(windSpeed));
     }
@@ -174,9 +190,15 @@ public class TimeWeather {
 
     public void setAltimeterSetting(double altimeterSetting) {
         this.altimeterSetting.set(String.valueOf(altimeterSetting));
+        try {
+            setDensityAltitude();
+        }catch(Exception ohWell){}
     }
     public void setAltimeterSetting(String altimeterSetting) {
         this.altimeterSetting.set(altimeterSetting);
+        try {
+            setDensityAltitude();
+        }catch(Exception ohWell){}
     }
 
   /*  public void setWindChill(int temp, int windSpeed)

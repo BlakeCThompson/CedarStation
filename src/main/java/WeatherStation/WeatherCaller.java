@@ -83,7 +83,7 @@ public class WeatherCaller extends Application {
         HBox hBox = (HBox) gridPane.getChildren().get(0);
         VBox readingsHolder = (VBox) hBox.getChildren().get(1);
 
-        scheduler.schedule("*/6 6-23 * * 1-5", () -> {
+        scheduler.schedule("*/6 6-23 * * *", () -> {
             System.out.println("scheduler is working.");
             //wrapping in platform.runlater makes it work on javafx thread.
             Platform.runLater(() -> setReadings(readingsHolder));
@@ -148,6 +148,8 @@ public class WeatherCaller extends Application {
         setLabel(visibilityBox, "#visibilityBox");
         SplitPane cloudsBox = (SplitPane) readingsHolder.lookup("#cloudsBox");
         setLabel(cloudsBox, "#cloudsBox");
+        SplitPane densityAltitudeBox = (SplitPane) readingsHolder.lookup("#densityAltitudeBox");
+        setLabel(densityAltitudeBox, "#densityAltitudeBox");
     }
 
     private static void setLabel(SplitPane weatherItemPane, String identifier) {
@@ -171,6 +173,8 @@ public class WeatherCaller extends Application {
             label.textProperty().bind(timeWeather.getMilesVisibility());
         } else if (label.getId().equalsIgnoreCase("cloudsLabel")) {
             label.textProperty().bind(timeWeather.getClouds());
+        }else if (label.getId().equalsIgnoreCase("densityAltitudeLabel")) {
+            label.textProperty().bind(timeWeather.getDensityAltitude());
         }
     }
 

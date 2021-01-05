@@ -81,7 +81,7 @@
                                     <items>
                                        <AnchorPane minHeight="27.0" minWidth="200.0" prefHeight="27.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" accessibleRole="PARENT" maxHeight="-Infinity" prefHeight="54.0" style="-fx-background-color: white; -fx-color: white;" text="Temperature (C)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
+                                             <Label accessibleRole="PARENT" maxHeight="-Infinity" prefHeight="54.0" style="-fx-background-color: white; -fx-color: white;" text="Temperature (C)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -95,7 +95,7 @@
                                     <items>
                                        <AnchorPane minHeight="27.0" minWidth="200.0" prefHeight="27.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" accessibleRole="PARENT" maxHeight="-Infinity" prefHeight="54.0" style="-fx-background-color: white; -fx-color: white;" text="Dew Point" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
+                                             <Label accessibleRole="PARENT" maxHeight="-Infinity" prefHeight="54.0" style="-fx-background-color: white; -fx-color: white;" text="Dew Point" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -109,7 +109,7 @@
                                     <items>
                                        <AnchorPane minHeight="27.0" minWidth="200.0" prefHeight="27.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" accessibleRole="PARENT" maxHeight="-Infinity" prefHeight="54.0" style="-fx-background-color: white; -fx-color: white;" text="Wind Speed (Knots)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
+                                             <Label accessibleRole="PARENT" maxHeight="-Infinity" prefHeight="54.0" style="-fx-background-color: white; -fx-color: white;" text="Wind Speed (Knots)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -130,7 +130,7 @@
                                     <items>
                                        <AnchorPane id="windDirectionBox" minHeight="27.0" minWidth="200.0" prefHeight="27.0" prefWidth="297.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" accessibleRole="PARENT" prefHeight="50.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="Wind Direction" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             <Label accessibleRole="PARENT" prefHeight="50.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="Wind Direction" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -144,7 +144,7 @@
                                     <items>
                                        <AnchorPane minHeight="27.0" minWidth="200.0" prefHeight="27.0" prefWidth="297.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" accessibleRole="PARENT" prefHeight="50.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="Visibility" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             <Label accessibleRole="PARENT" prefHeight="50.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="Visibility" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -158,7 +158,7 @@
                                     <items>
                                        <AnchorPane minHeight="27.0" minWidth="200.0" prefHeight="27.0" prefWidth="297.0">
                                           <children>
-                                             <Label id="densityAltitudeLabel" accessibleRole="PARENT" prefHeight="50.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="Clouds Elev." AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             <Label id="cloudsBox" accessibleRole="PARENT" prefHeight="50.4" prefWidth="296.8" style="-fx-background-color: white; -fx-color: white;" text="Clouds Elev." AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                           </children>
                                        </AnchorPane>
                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -192,7 +192,7 @@
                                        </AnchorPane>
                                    </items>
                                  </SplitPane>
-                                 <SplitPane dividerPositions="0.38781163434903043" orientation="VERTICAL" prefHeight="167.0" prefWidth="302.0" style="-fx-background-color: white;" styleClass="dashBox">
+                                 <SplitPane id="densityAltitudeBox" dividerPositions="0.38781163434903043" orientation="VERTICAL" prefHeight="167.0" prefWidth="302.0" style="-fx-background-color: white;" styleClass="dashBox">
                                     <items>
                                        <AnchorPane minHeight="27.0" minWidth="200.0" prefHeight="27.0" prefWidth="297.0">
                                           <children>
