@@ -55,6 +55,12 @@
             <scope>system</scope>
             <systemPath>C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.graphics.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

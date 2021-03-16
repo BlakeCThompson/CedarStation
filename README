@@ -10,3 +10,4 @@ requests/month. Details at https://synopticdata.com/pricing/
 To run on a Windows machine, Java (version 11 or greater) must be installed. Then, the app can be started simply by double clicking the included CedarWeatherStation.bat file.
 
 
+#creating the uber-jar file:
